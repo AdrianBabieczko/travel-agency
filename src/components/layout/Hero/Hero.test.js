@@ -4,7 +4,7 @@ import Hero from './Hero';
 
 describe('Component Hero', () => {
   it('should render without crashing', () => {
-    const component = shallow(<Hero titleText='Lorem ipsum' imageSrc='xxx' />);
+    const component = shallow(<Hero titleText='Lorem ipsum'  imageSrc = 'xxx'/>);
     expect(component).toBeTruthy();
   });
 
@@ -15,7 +15,7 @@ describe('Component Hero', () => {
   it('should render correct title and image', () => {
     const expectedTitle = 'Lorem ipsum';
     const expectedImage = 'image.jpg';
-    const component = shallow(<Hero titleText={expectedTitle} imageSrc={expectedImage} />);
+    const component = shallow(<Hero titleText={expectedTitle} imageSrc={expectedImage}/>);
     const renderedTitle = component.find('.title').text();
     expect(renderedTitle).toEqual(expectedTitle);
     expect(component.find('.image').prop('src')).toEqual(expectedImage);
